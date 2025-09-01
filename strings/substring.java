@@ -3,7 +3,7 @@ public class substring {
         String str="sheikh wasimuddin";
         str.substring(0,8);
         System.out.println("Substring: " + str.substring(0,8));
-        System.out.println("Substring: " + Substring(str,0,9));
+        System.out.println("Substring: " + Substring(str,0,9)); 
     }
     public static String Substring(String str,int si,int ei){
         String substr="";
