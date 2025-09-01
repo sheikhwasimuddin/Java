@@ -1,16 +1,16 @@
 public class searchinsortedmatrix {
-    // public static void searchitem(int matrix[][], int target) {
-    // //1 approach
-    //         for (int i = 0; i < matrix.length; i++) {
-    //         for (int j = 0; j < matrix[0].length; j++) {
-    //             if (matrix[i][j] == target) {
-    //                 System.out.println("Element found at (" + i + ", " + j + ")");
-    //                 return; // stop searching and exit
-    //             }
-    //         }
-    //     }
-    //     System.out.println("Element not found");
-    // }
+    public static void searchitem(int matrix[][], int target) {
+    //1 approach
+            for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == target) {
+                    System.out.println("Element found at (" + i + ", " + j + ")");
+                    return; // stop searching and exit
+                }
+            }
+        }
+        System.out.println("Element not found");
+    }
 
 
     public static void main(String[] args) {
@@ -21,8 +21,9 @@ public class searchinsortedmatrix {
             {32, 33, 39, 50}
         };
         int target = 33;
-        // searchitem(matrix, target);
+        searchitem(matrix, target);
         stairSearch(matrix, target);
+        StairCase(matrix, target);
     }
 
     // 3 approach: stair Search in a sorted matrix (row-wise and column-wise sorted)
@@ -36,6 +37,25 @@ public class searchinsortedmatrix {
                 col--;
             } else {
                 row++;
+            }
+        }
+        System.out.println("Element not found");
+    }
+
+    //3i approach :stair search from bottom right
+    public static void StairCase(int [][]matrix,int target){
+        int row=matrix.length-1;
+        int col=0;
+        while(row>=0 && col<matrix[0].length){
+            if(matrix[row][col]==target){
+                System.out.println("Element found at ("+row+", "+col+")");
+                return;
+            }
+            else if(matrix[row][col]>target){
+                row--;
+            }
+            else{
+                col++;
             }
         }
         System.out.println("Element not found");
