@@ -1,12 +1,13 @@
 public class poweroptimized {
-    public static int optpow(int n,int x){
+ public static int optpow(int n,int x){
         if(x==0){
             return 1;
         }
-        int powhalf=optpow(n,x/2)*optpow(n,x/2);
+        int halfpow=optpow(n,x/2);
+        halfpow=halfpow*halfpow;
         if(x%2!=0)
-            powhalf*=n;
-        return powhalf;
+            halfpow*=n;
+        return halfpow;
     }
 
     public static void main(String[] args) {
