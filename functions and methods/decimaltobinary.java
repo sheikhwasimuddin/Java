@@ -1,18 +1,21 @@
-public class decimaltobinary {
-    public static void dectobin(int n){
+import java.util.*;
+public class decimaltobinary{
+    public static void decimaltobinary(int n){
         int bin=0;
         int power=0;
+        int num=n;
         while(n>0){
-            int rem= n%2;
-            bin=bin+rem*(int)Math.pow(10, power);
+            bin=bin+(n%2)*(int)Math.pow(10,power);
             power++;
-            n=n/2;
+            n/=2;
         }
-        System.out.println(bin);
+        System.out.println("binary equivalent of decimal number "+num+"is:"+bin);
 
     }
-    public static void main(String[] args) {
-        dectobin(123);
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a decimal number");
+        int n=sc.nextInt();
+        decimaltobinary(n);
     }
-    
 }

@@ -1,25 +1,20 @@
-
-import java.util.Scanner;
-
-public class binarytodecimal {
-    public static void bintodec(long binnum){
-        long power=0;
-        long num=binnum;
-        long decimal=0;
-        while(binnum>0){
-            long lastdigit=binnum%10;
-            decimal=decimal+(long)Math.pow(2,power)*lastdigit;
-
+import java.util.*;
+public class binarytodecimal{
+    public static void binarytodecimal(int n){
+        int decimal=0;
+        int num=n;
+        int power=0;
+        while(n>0){
+            decimal=decimal+(n%10)*(int)Math.pow(2,power);
             power++;
-            binnum/=10;
+            n/=10;
         }
-        System.out.println("Decimal equivalent of binary number " +num+" is: "+decimal);
+        System.out.println("Decimal equivalent of binary number " + num + " is: " + decimal);
     }
-    public static void main(String[] args){
-        try(Scanner sc=new Scanner(System.in)){
-            System.out.println("Enter a binary number");
-            long binnum=sc.nextLong();
-            bintodec(binnum);
-        }
+    public static void main(String[]args){
+        Scanner sc=new Scanner (System.in);
+        System.out.println("enter a binary number");
+        int n=sc.nextInt();
+        binarytodecimal(n);
     }
 }
